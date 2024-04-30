@@ -31,30 +31,32 @@ function operate(num1,num2,op){
     else return "error";
 }
 let counter=[];
-let int=0;
-let int2=0;
-let oper="something";
+let int="";
+let int2="";
+let oper="";
 Array.from(num)
 Array.from(op)
 
 
+
+// Event listeners for operator buttons
+
 num.forEach(num=>num.addEventListener("click",()=>{
     int+=num.textContent
     displayed.textContent+=num.textContent
-            
+    if(oper!=""){
+        int2+=num.textContent
+    displayed.textContent+=num.textContent
+               
+    }
+     
 }))
 op.forEach(op=>op.addEventListener("click",()=>{
     oper=op.textContent
-    displayed.textContent=op.textContent
+    displayed.textContent=""
 }))
-if(oper!=="boo"){
-    num.forEach(num=>num.addEventListener("click",()=>{
-        display.textContent="0"
-        int2+=num.textContent
-        displayed.textContent+=num.textContent
-                
-    }))
-}
+
+
 
 display.appendChild(displayed)
 console.log(int)
